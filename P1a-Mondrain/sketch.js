@@ -1,6 +1,6 @@
 // Hér kemur kóðinn þinn:
 function setup(){
-    createCanvas(1100,1100);
+    createCanvas(640,650);
     fill(0);
     rect(22,24,618,620);
     fill(199,51,39);

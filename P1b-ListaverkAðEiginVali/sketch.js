@@ -1,6 +1,6 @@
 // Hér kemur kóðinn þinn:
 function setup(){
-    createCanvas(1500,1500);
+    createCanvas(340,340);
     noStroke();
 
     fill(33,19,32);//black
