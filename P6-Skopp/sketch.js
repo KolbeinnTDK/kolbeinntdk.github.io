@@ -76,7 +76,7 @@ function draw(){
 
 
     fill(255,255,255);
-    ellipse(x,y,bolti,bolti);
+    rect(x,y,bolti,bolti);
     rect(spadiX1,spadiY1,spadiBreidd,spadiTykkt);
     rect(spadiX2,spadiY2,spadiBreidd,spadiTykkt);
     text("Stig: " + stig1, 440,20);
