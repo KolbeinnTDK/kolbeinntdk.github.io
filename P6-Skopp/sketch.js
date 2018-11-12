@@ -1,7 +1,7 @@
 // Hér kemur kóðinn þinn
-var x = 100;
-var y = 200;
-var hradiX = 5;
+var x;
+var y;
+var hradiX = 0;
 var hradiY = 5;
 var bolti = 20;
 
@@ -9,10 +9,10 @@ var spadiBreidd = 150;
 var spadiTykkt = 20;
 
 var spadiY1;
-var spadiX1 = 200;
+var spadiX1;
 
 var spadiY2;
-var spadiX2 = 200;
+var spadiX2;
 
 var stig1 = 0;
 var stig2 = 0;
@@ -24,6 +24,10 @@ function setup() {
     rectMode(CENTER);
     spadiY1 = height - 50;
     spadiY2 = 50;
+    spadiX1 = width/2;
+    spadiX2 = width/2;
+    x = width/2;
+    y = height/2;
 }
 
 function draw(){
@@ -46,17 +50,22 @@ function draw(){
       hradiY = hradiY*-1;
       stig2 = stig2  + 1;
       spadiBreidd = 150;
-
     }
 
     if(abs(spadiY1-y) < bolti/2 + spadiTykkt/2 && abs(spadiX1-x) < bolti/2 + spadiBreidd/2 && hradiY>0){
       hradiY = hradiY*-1;
+      hradiX = hradiX - (spadiX1-x)*0.1
+      if(spadiBreidd>10){
       spadiBreidd = spadiBreidd -10;
+    }
     }
 
     if(abs(spadiY2-y) < bolti/2 + spadiTykkt/2 && abs(spadiX2-x) < bolti/2 + spadiBreidd/2 && hradiY<0){
       hradiY = hradiY*-1;
+      hradiX = hradiX - (spadiX2-x)*0.1
+      if(spadiBreidd>10){
       spadiBreidd = spadiBreidd -10;
+    }
     }
 
 
