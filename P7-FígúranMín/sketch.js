@@ -9,7 +9,7 @@ function setup(){
 
 function draw(){
     background(255,255,0);
-    figure(mouseX,mouseY,100,100,random(73,130));
+    figure(width-mouseX,height-mouseY,100,100,random(73,130));
 }
 
 function figure(x,y,lengd,haed,fire){
