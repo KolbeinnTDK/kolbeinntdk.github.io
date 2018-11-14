@@ -1,8 +1,9 @@
 // Hér kemur kóðinn þinn
 var circle;
 var basket;
-var x = 1;
-var y = 1;
+var ball = 100;
+var x = 200
+var y = 200
 
 function preload() {
     circle = loadImage('assets/circle.png');
@@ -19,12 +20,23 @@ function draw() {
         imageMode(CORNER);
         background(circle);
         imageMode(CENTER);
-        image(basket,mouseX,mouseY,x,y);
-        x = x + x*0.05;
-        y = y + y*0.05;
+        image(basket,x,y,ball,ball);
+        ball = ball + x*0.05;
     }
-    if(x > 400){
-      x = 1;
-      y = 1;
+    if(ball > 400){
+      ball = 1;
+    }
+
+    if(keyIsDown(65) && x > 0){
+      x = x - 10;
+    }
+    if(keyIsDown(68) && x < 400){
+      x = x + 10;
+    }
+    if(keyIsDown(87) && y > 0){
+      y = y - 10;
+    }
+    if(keyIsDown(83) && y < 400){
+      y = y + 10;
     }
 }
