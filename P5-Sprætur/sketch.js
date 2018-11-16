@@ -21,7 +21,7 @@ function draw() {
         background(circle);
         imageMode(CENTER);
         image(basket,x,y,ball,ball);
-        ball = ball + x*0.05;
+        ball = ball*1.05;
     }
     if(ball > 400){
       ball = 1;
