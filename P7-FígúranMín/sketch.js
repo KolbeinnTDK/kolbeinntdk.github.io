@@ -1,7 +1,7 @@
 // Hér kemur kóðinn þinn:
 
 function setup(){
-    createCanvas(1280,606.3);
+    createCanvas(1280,606);
 
     rectMode(CENTER);
     noStroke();
@@ -40,4 +40,8 @@ function figure(x,y,lengd,haed,color,fire){
 
     //RFótur
     rect(x+30*lengd/100,y+198*haed/100,lengd*0.2,haed)
+
+    if(mouseIsPressed){
+      x = x +100
+    }
 }
