@@ -1,21 +1,41 @@
 // Hér kemur kóðinn þinn:
-var robot1, robot2;
+var robot = [];
+var robotP;
 
 function setup(){
     createCanvas(1280,606);
-    robot1 = new Robot(400,400,100,100,0,100);
-    robot2 = new Robot(200,300,100,100,255,100);
+    for (var i = 0; i < 1; i=i+1){
+      robot[i] = new Robot(random(0,width),random(0,height),random(25,50),random(25,50),random(0,255),100);
+    }
+    robotP = new Robot(width/2,height/2,60,60,0,100);
+
+
 }
 
 function draw(){
     background(255,255,0);
-    robot1.show();
-    robot1.move();
-    robot1.flame();
+    rectMode(CENTER);
+    fill(0,255,0);
+    rect(width/2,height/2,width/10*9,height/10*9,200)
+    for (var i = 0; i < robot.length; i=i+1){
+      robot[i].show();
+      robot[i].move();
+      robot[i].flame();
 
-    robot2.show();
-    robot2.move();
-    robot2.flame();
+      robotP.show();
+      robotP.pmove();
+      robotP.flame();
+    }
+}
+
+function keyPressed(){
+  if(keyIsDown(32)){
+    robot.splice(0,1);
+  }
+}
+
+function mousePressed(){
+  robot.push(new Robot(mouseX,mouseY,random(25,50),random(25,50),random(0,255),100));
 }
 
 class Robot{
@@ -89,5 +109,20 @@ class Robot{
 
     flame(){
       this.fire = random(73,130);
+    }
+
+    pmove(){
+      if(keyIsDown(87) && this.y>0){
+        this.y = this.y -5
+      }
+      if(keyIsDown(83) && this.y<height){
+        this.y = this.y +5
+      }
+      if(keyIsDown(68) && this.x<width){
+        this.x = this.x +5
+      }
+      if(keyIsDown(65) && this.x>0){
+        this.x = this.x -5
+      }
     }
 }
