@@ -10,6 +10,7 @@ Til þess að læra að gera eitthvað, prófaðu að leita á google af því s
 header {
    background-color: #5B2C6F;
    width: 100%;
+   padding: 1px;
    text-align: center;
    font-size: 25px;
    color: white;
@@ -47,9 +48,9 @@ article {
 }
 
 body {
-  background-color: #5B2C6F;
+  background-color: #000000;
   color: #000000;
-  margin: 00px;
+  margin: 0px;
 }
 
 a:link {
