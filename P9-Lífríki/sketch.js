@@ -113,16 +113,16 @@ class Robot{
 
     pmove(){
       if(keyIsDown(87) && this.y>0){
-        this.y = this.y -5
+        this.y = this.y -3;
       }
       if(keyIsDown(83) && this.y<height){
-        this.y = this.y +5
+        this.y = this.y +3;
       }
       if(keyIsDown(68) && this.x<width){
-        this.x = this.x +5
+        this.x = this.x +3;
       }
       if(keyIsDown(65) && this.x>0){
-        this.x = this.x -5
+        this.x = this.x -3;
       }
     }
 }
